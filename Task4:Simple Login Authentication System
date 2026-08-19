@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+
+    // Hardcoded credentials
+    string correctUsername = "admin";
+    string correctPassword = "12345";
+
+    string username;
+    string password;
+
+    int attempts = 0;
+    const int maxAttempts = 3;
+
+    cout << "==============================" << endl;
+    cout << "     LOGIN AUTHENTICATION" << endl;
+    cout << "==============================" << endl;
+
+    // Login loop
+    while (attempts < maxAttempts) {
+
+        cout << "\nEnter username: ";
+        cin >> username;
+
+        cout << "Enter password: ";
+        cin >> password;
+
+        attempts++;
+
+        // Compare username and password
+        if (username == correctUsername && password == correctPassword) {
+            cout << "\nLogin successful!" << endl;
+            cout << "Welcome, " << username << "!" << endl;
+
+            return 0;
+        }
+        else {
+            cout << "\nInvalid username or password." << endl;
+            cout << "Attempts remaining: "
+                 << maxAttempts - attempts << endl;
+        }
+    }
+
+    cout << "\nToo many failed attempts." << endl;
+    cout << "Access denied!" << endl;
+
+    return 0;
+}
