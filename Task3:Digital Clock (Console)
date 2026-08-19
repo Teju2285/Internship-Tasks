@@ -1,0 +1,36 @@
+#include <iostream>
+#include <ctime>
+#include <windows.h>
+
+using namespace std;
+
+int main() {
+
+    cout << "=================================" << endl;
+    cout << "   Welcome to Digital Clock" << endl;
+    cout << "=================================" << endl;
+
+    while (true) {
+
+        // Get current time
+        time_t now = time(0);
+
+        // Convert to string format
+        char* dt = ctime(&now);
+
+        // Clear console screen
+        system("cls");
+
+        cout << "=================================" << endl;
+        cout << "      DIGITAL CLOCK" << endl;
+        cout << "=================================" << endl;
+
+        cout << "Current Date & Time:" << endl;
+        cout << dt << endl;
+
+        // Wait for 1 second
+        Sleep(1000);
+    }
+
+    return 0;
+}
